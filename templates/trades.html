@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Trades</title>
+    <style>
+        body { background:#050b16; color:white; font-family:Arial, sans-serif; margin:0; padding:24px; min-height:100vh; }
+        .container { max-width:1000px; margin:0 auto; }
+        h1 { margin-top:0; }
+        .table-wrapper { overflow-x:auto; }
+        table { width:100%; border-collapse: collapse; margin-top:16px; min-width:720px; }
+        th, td { padding:12px 10px; border:1px solid #333; text-align:left; }
+        th { background:#0b1220; }
+        tr:nth-child(even) { background:#0a101b; }
+        a { color:#7dd3fc; text-decoration:none; }
+        .empty { color:#94a3b8; margin-top:16px; }
+        @media (max-width: 768px) {
+            body { padding:18px; }
+            .table-wrapper { padding-bottom:12px; }
+            table { min-width:0; }
+            th, td { padding:10px 8px; }
+        }
+        @media (max-width: 480px) {
+            body { padding:14px; }
+            h1 { font-size:1.5rem; }
+            th, td { font-size:0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <h1>My Trades</h1>
+    <p><a href="/dashboard">Back to Dashboard</a> · <a href="/logout">Logout</a></p>
+    {% if trades %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pair</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Entry Price</th>
+                    <th>Exit Price</th>
+                    <th>Profit</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in trades %}
+                <tr>
+                    <td>{{ trade.id }}</td>
+                    <td>{{ trade.pair }}</td>
+                    <td>{{ trade.trade_type }}</td>
+                    <td>{{ trade.amount }}</td>
+                    <td>{{ trade.entry_price }}</td>
+                    <td>{{ trade.exit_price or '—' }}</td>
+                    <td>{{ trade.profit }}</td>
+                    <td>{{ trade.status }}</td>
+                    <td>{{ trade.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="empty">No trades found yet. Place a trade to see it here.</p>
+    {% endif %}
+</body>
+</html>

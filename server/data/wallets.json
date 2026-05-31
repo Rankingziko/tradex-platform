@@ -1,0 +1,418 @@
+[
+  {
+    "_id": "0e1f563466c2b7cd36eec26b",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "BTC",
+    "balance": 500,
+    "totalDeposited": 500,
+    "totalWithdrawn": 0,
+    "address": "btc_address_45b9fd4b",
+    "createdAt": "2026-05-30T01:12:35.243Z"
+  },
+  {
+    "_id": "43aa6dbc5a9e08f4ae647815",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "ETH",
+    "balance": 252,
+    "totalDeposited": 252,
+    "totalWithdrawn": 0,
+    "address": "eth_address_45b9fd4b",
+    "createdAt": "2026-05-30T01:12:35.245Z"
+  },
+  {
+    "_id": "bfb9375fea4e56c465f8b407",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "USDT",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "usdt_address_45b9fd4b",
+    "createdAt": "2026-05-30T01:12:35.246Z"
+  },
+  {
+    "_id": "06f02d3d1c4f8874cdda9daf",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "BNB",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "bnb_address_45b9fd4b",
+    "createdAt": "2026-05-30T01:12:35.247Z"
+  },
+  {
+    "_id": "99be7313130e86be97c86e8b",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "XRP",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "xrp_address_45b9fd4b",
+    "createdAt": "2026-05-30T01:12:35.248Z"
+  },
+  {
+    "_id": "96f087c5355edcac28e9da8e",
+    "userId": "e45773463942ed77c1c864dd",
+    "currency": "BTC",
+    "balance": 3000000,
+    "totalDeposited": 3000000,
+    "totalWithdrawn": 0,
+    "address": "btc_address_e4577346",
+    "createdAt": "2026-05-30T01:34:49.625Z"
+  },
+  {
+    "_id": "c5ba8b8238b45b36034ca7b2",
+    "userId": "e45773463942ed77c1c864dd",
+    "currency": "ETH",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "eth_address_e4577346",
+    "createdAt": "2026-05-30T01:34:49.626Z"
+  },
+  {
+    "_id": "7534521b994801ba86e6ac8a",
+    "userId": "e45773463942ed77c1c864dd",
+    "currency": "USDT",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "usdt_address_e4577346",
+    "createdAt": "2026-05-30T01:34:49.628Z"
+  },
+  {
+    "_id": "eb06489b0c47688381cb2832",
+    "userId": "e45773463942ed77c1c864dd",
+    "currency": "BNB",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "bnb_address_e4577346",
+    "createdAt": "2026-05-30T01:34:49.629Z"
+  },
+  {
+    "_id": "d347886812f9502243abbae5",
+    "userId": "e45773463942ed77c1c864dd",
+    "currency": "XRP",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "xrp_address_e4577346",
+    "createdAt": "2026-05-30T01:34:49.631Z"
+  },
+  {
+    "_id": "0ccdb66bed1ea23f6bec2302",
+    "userId": "77c276cd28442f0de49bf29f",
+    "currency": "BTC",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "btc_address_77c276cd",
+    "createdAt": "2026-05-30T12:11:15.787Z"
+  },
+  {
+    "_id": "5b070d801bf76c6e8ffe11bc",
+    "userId": "77c276cd28442f0de49bf29f",
+    "currency": "ETH",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "eth_address_77c276cd",
+    "createdAt": "2026-05-30T12:11:15.789Z"
+  },
+  {
+    "_id": "a7ac0a482893881aad88df5c",
+    "userId": "77c276cd28442f0de49bf29f",
+    "currency": "USDT",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "usdt_address_77c276cd",
+    "createdAt": "2026-05-30T12:11:15.790Z"
+  },
+  {
+    "_id": "a273610c0fe37e944ad810dd",
+    "userId": "77c276cd28442f0de49bf29f",
+    "currency": "BNB",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "bnb_address_77c276cd",
+    "createdAt": "2026-05-30T12:11:15.792Z"
+  },
+  {
+    "_id": "ad77e70354cb168893648fae",
+    "userId": "77c276cd28442f0de49bf29f",
+    "currency": "XRP",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "xrp_address_77c276cd",
+    "createdAt": "2026-05-30T12:11:15.794Z"
+  },
+  {
+    "_id": "5e225e36e2154b3efb77867f",
+    "userId": "41b73d583a4b5a9f9db91f11",
+    "currency": "BTC",
+    "balance": 500000,
+    "totalDeposited": 500000,
+    "totalWithdrawn": 0,
+    "address": "btc_address_41b73d58",
+    "createdAt": "2026-05-30T12:23:20.422Z"
+  },
+  {
+    "_id": "2b2f2cc58a9663d6c485a170",
+    "userId": "41b73d583a4b5a9f9db91f11",
+    "currency": "ETH",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "eth_address_41b73d58",
+    "createdAt": "2026-05-30T12:23:20.426Z"
+  },
+  {
+    "_id": "c46271e7948640eb9108d140",
+    "userId": "41b73d583a4b5a9f9db91f11",
+    "currency": "USDT",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "usdt_address_41b73d58",
+    "createdAt": "2026-05-30T12:23:20.427Z"
+  },
+  {
+    "_id": "0f4558a945b55930d58911a5",
+    "userId": "41b73d583a4b5a9f9db91f11",
+    "currency": "BNB",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "bnb_address_41b73d58",
+    "createdAt": "2026-05-30T12:23:20.428Z"
+  },
+  {
+    "_id": "e5d52ae1cd7eae43dbf93e07",
+    "userId": "41b73d583a4b5a9f9db91f11",
+    "currency": "XRP",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "xrp_address_41b73d58",
+    "createdAt": "2026-05-30T12:23:20.432Z"
+  },
+  {
+    "_id": "9b3bb72cb44c1e7980ef9543",
+    "userId": "8cd56141403e4c3a7bf5d631",
+    "currency": "BTC",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "btc_address_8cd56141",
+    "createdAt": "2026-05-30T15:01:53.033Z"
+  },
+  {
+    "_id": "5cea3413dd2fe1d46d80c8c0",
+    "userId": "8cd56141403e4c3a7bf5d631",
+    "currency": "ETH",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "eth_address_8cd56141",
+    "createdAt": "2026-05-30T15:01:53.035Z"
+  },
+  {
+    "_id": "143f77d147073f8f69ce0649",
+    "userId": "8cd56141403e4c3a7bf5d631",
+    "currency": "USDT",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "usdt_address_8cd56141",
+    "createdAt": "2026-05-30T15:01:53.037Z"
+  },
+  {
+    "_id": "ef0126aa01f7e3e43846c376",
+    "userId": "8cd56141403e4c3a7bf5d631",
+    "currency": "BNB",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "bnb_address_8cd56141",
+    "createdAt": "2026-05-30T15:01:53.041Z"
+  },
+  {
+    "_id": "8f25fb30c0eb796181bd0a8b",
+    "userId": "8cd56141403e4c3a7bf5d631",
+    "currency": "XRP",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "xrp_address_8cd56141",
+    "createdAt": "2026-05-30T15:01:53.043Z"
+  },
+  {
+    "_id": "06fc7af09621cb7d0c7c078e",
+    "userId": "f769b75f6c29b36d0f533368",
+    "currency": "BTC",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "btc_address_f769b75f",
+    "createdAt": "2026-05-30T15:33:12.248Z"
+  },
+  {
+    "_id": "7943010668a516ef5428c14a",
+    "userId": "f769b75f6c29b36d0f533368",
+    "currency": "ETH",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "eth_address_f769b75f",
+    "createdAt": "2026-05-30T15:33:12.250Z"
+  },
+  {
+    "_id": "5a44c99629fb97438e9df233",
+    "userId": "f769b75f6c29b36d0f533368",
+    "currency": "USDT",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "usdt_address_f769b75f",
+    "createdAt": "2026-05-30T15:33:12.252Z"
+  },
+  {
+    "_id": "3b9049fca57efdadbd06244d",
+    "userId": "f769b75f6c29b36d0f533368",
+    "currency": "BNB",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "bnb_address_f769b75f",
+    "createdAt": "2026-05-30T15:33:12.254Z"
+  },
+  {
+    "_id": "7ea0b928ef6160a0688cabc7",
+    "userId": "f769b75f6c29b36d0f533368",
+    "currency": "XRP",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "xrp_address_f769b75f",
+    "createdAt": "2026-05-30T15:33:12.256Z"
+  },
+  {
+    "_id": "618bd5acf04e6adae407839b",
+    "userId": "61e78eac8d197ff8b3600620",
+    "currency": "BTC",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "btc_address_61e78eac",
+    "createdAt": "2026-05-30T15:43:40.123Z"
+  },
+  {
+    "_id": "37a530b34edfd2f00da58c4b",
+    "userId": "61e78eac8d197ff8b3600620",
+    "currency": "ETH",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "eth_address_61e78eac",
+    "createdAt": "2026-05-30T15:43:40.126Z"
+  },
+  {
+    "_id": "677b87d8743a38dbe05d997f",
+    "userId": "61e78eac8d197ff8b3600620",
+    "currency": "USDT",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "usdt_address_61e78eac",
+    "createdAt": "2026-05-30T15:43:40.128Z"
+  },
+  {
+    "_id": "95531c071eb8637242e0a1bd",
+    "userId": "61e78eac8d197ff8b3600620",
+    "currency": "BNB",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "bnb_address_61e78eac",
+    "createdAt": "2026-05-30T15:43:40.131Z"
+  },
+  {
+    "_id": "0f981c53abf0549f0e7be11d",
+    "userId": "61e78eac8d197ff8b3600620",
+    "currency": "XRP",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "xrp_address_61e78eac",
+    "createdAt": "2026-05-30T15:43:40.134Z"
+  },
+  {
+    "_id": "49e66c0bd2a7597adb885b2c",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "USD",
+    "balance": 9000,
+    "totalDeposited": 9000,
+    "createdAt": "2026-05-30T22:28:02.861Z"
+  },
+  {
+    "_id": "d659d3e791122af39a71adcc",
+    "userId": "41b73d583a4b5a9f9db91f11",
+    "currency": "USD",
+    "balance": 500,
+    "totalDeposited": 60000,
+    "createdAt": "2026-05-30T22:28:59.521Z"
+  },
+  {
+    "_id": "1bd6915f249feafdae0ca664",
+    "userId": "58736a7e341a66f49a0f0d75",
+    "currency": "BTC",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "btc_address_58736a7e",
+    "createdAt": "2026-05-31T00:36:39.666Z"
+  },
+  {
+    "_id": "c35ab711f5a916425bac0392",
+    "userId": "58736a7e341a66f49a0f0d75",
+    "currency": "ETH",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "eth_address_58736a7e",
+    "createdAt": "2026-05-31T00:36:39.669Z"
+  },
+  {
+    "_id": "67b7da3d35e446d59556029e",
+    "userId": "58736a7e341a66f49a0f0d75",
+    "currency": "USDT",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "usdt_address_58736a7e",
+    "createdAt": "2026-05-31T00:36:39.675Z"
+  },
+  {
+    "_id": "9bcc4ba50064d34839bba617",
+    "userId": "58736a7e341a66f49a0f0d75",
+    "currency": "BNB",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "bnb_address_58736a7e",
+    "createdAt": "2026-05-31T00:36:39.678Z"
+  },
+  {
+    "_id": "838ed5a2eda73d2e50a8c064",
+    "userId": "58736a7e341a66f49a0f0d75",
+    "currency": "XRP",
+    "balance": 0,
+    "totalDeposited": 0,
+    "totalWithdrawn": 0,
+    "address": "xrp_address_58736a7e",
+    "createdAt": "2026-05-31T00:36:39.679Z"
+  }
+]

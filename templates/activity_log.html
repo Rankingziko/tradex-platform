@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity Log</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; margin-bottom: 30px; }
+        .nav { margin-bottom: 20px; }
+        .nav a { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .nav a:hover { background: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background: #f8f9fa; padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; }
+        td { padding: 12px 15px; border-bottom: 1px solid #dee2e6; }
+        tr:hover { background: #f8f9fa; }
+        .action-cell { color: #555; }
+        .admin-name { font-weight: bold; color: #007bff; }
+        .timestamp { color: #999; font-size: 0.9em; }
+        .search-box { margin-bottom: 20px; }
+        .search-box input { padding: 10px; width: 300px; border: 1px solid #ddd; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Activity Log - Admin Actions</h1>
+        
+        <div class="nav">
+            <a href="/admin">← Back to Admin Panel</a>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="searchBox" placeholder="Search activities..." onkeyup="searchLogs()">
+        </div>
+        
+        <table id="activityTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Admin</th>
+                    <th>Action</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr class="log-row">
+                    <td>#{{ log.id }}</td>
+                    <td>
+                        <span class="admin-name">
+                            {{ admin_list[log.admin_id].username if log.admin_id in admin_list else 'Unknown Admin' }}
+                        </span>
+                    </td>
+                    <td class="action-cell">{{ log.action }}</td>
+                    <td class="timestamp">{{ log.created_at.strftime('%Y-%m-%d %H:%M:%S') if log.created_at else 'N/A' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        {% if not logs %}
+        <p style="text-align: center; margin-top: 30px; color: #999;">No activity logs found</p>
+        {% endif %}
+    </div>
+    
+    <script>
+        function searchLogs() {
+            const input = document.getElementById('searchBox').value.toLowerCase();
+            const rows = document.querySelectorAll('.log-row');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(input) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

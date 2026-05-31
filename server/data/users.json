@@ -1,0 +1,93 @@
+[
+  {
+    "_id": "45b9fd4b3e3fa73e2340b323",
+    "firstName": "Demo",
+    "lastName": "User",
+    "email": "demo@tradex.com",
+    "password": "2bd081db406259d0256aca67ebc389a39a18f459f0e61d295a82ce60b4994fe5",
+    "referralCode": "TRX820837BA",
+    "balance": 9752,
+    "role": "trader",
+    "createdAt": "2026-05-30T01:12:35.241Z",
+    "updatedAt": "2026-05-30T22:28:02.869Z"
+  },
+  {
+    "_id": "e45773463942ed77c1c864dd",
+    "firstName": "Admin",
+    "lastName": "User",
+    "email": "admin@tradex.com",
+    "password": "eeea7af566eaa1ec19871a5074808e5bd4df3e28644fab20e81ebfc69ca6bb8a",
+    "referralCode": "TRX4A939090",
+    "balance": 3000000,
+    "role": "admin",
+    "createdAt": "2026-05-30T01:34:49.621Z",
+    "updatedAt": "2026-05-30T15:55:47.546Z"
+  },
+  {
+    "_id": "77c276cd28442f0de49bf29f",
+    "firstName": "TEST",
+    "lastName": "USER",
+    "email": "test@yourmail.com",
+    "password": "aa92ff0fbd8cd978b92287ef77a23ce0058e908f95c5cefc37d793597ba976af",
+    "referralCode": "TRXF25DB9AF",
+    "balance": 0,
+    "role": "trader",
+    "createdAt": "2026-05-30T12:11:15.784Z"
+  },
+  {
+    "_id": "41b73d583a4b5a9f9db91f11",
+    "firstName": "Alex",
+    "lastName": "Mobile",
+    "email": "alexmobile@test.com",
+    "password": "41d4af22e923c23146b5f8e0f72fcbed3d208f8c51adc5de55bbefa9db1f8172",
+    "referralCode": "TRXDDD409CC",
+    "balance": 500500,
+    "role": "trader",
+    "createdAt": "2026-05-30T12:23:20.419Z",
+    "updatedAt": "2026-05-30T22:29:51.338Z"
+  },
+  {
+    "_id": "8cd56141403e4c3a7bf5d631",
+    "firstName": "Alex",
+    "lastName": "Smith",
+    "email": "alex.smith@test.com",
+    "password": "20b25c08983657ee0d44a2596616d13dde3e3232114564173ef62c8985bbf539",
+    "referralCode": "TRXEEA536A3",
+    "balance": 0,
+    "role": "trader",
+    "createdAt": "2026-05-30T15:01:53.030Z"
+  },
+  {
+    "_id": "f769b75f6c29b36d0f533368",
+    "firstName": "John",
+    "lastName": "Test",
+    "email": "john.test@example.com",
+    "password": "1332e25a56a9a77e3f6608cce73ca7da47ccfd7445a644a43de55c66ee3689a8",
+    "referralCode": "TRX0F282B57",
+    "balance": 0,
+    "role": "trader",
+    "createdAt": "2026-05-30T15:33:12.243Z"
+  },
+  {
+    "_id": "61e78eac8d197ff8b3600620",
+    "firstName": "Mary",
+    "lastName": "Johnson",
+    "email": "mary.johnson@test.com",
+    "password": "f1ea6e790234ae6b0ebdd250c2466b8cd87e645c734de05cd5d37c3d7062aa69",
+    "referralCode": "TRXFCBF9BCE",
+    "balance": 0,
+    "role": "trader",
+    "createdAt": "2026-05-30T15:43:40.117Z"
+  },
+  {
+    "_id": "58736a7e341a66f49a0f0d75",
+    "firstName": "Ebiyor",
+    "lastName": "Zikorebai",
+    "email": "ebiyorzikorebai@tradex.com",
+    "password": "cb885c272405311b3f3f9866a030242cdfab2464227aa475d6b4da1d5a7ba94c",
+    "referralCode": "TRXC8C6AEF3",
+    "balance": 0,
+    "role": "trader",
+    "createdAt": "2026-05-31T00:36:39.661Z"
+  }
+]

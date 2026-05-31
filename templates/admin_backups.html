@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backup Manager</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; margin-bottom: 30px; }
+        .nav { margin-bottom: 20px; }
+        .nav a { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .nav a:hover { background: #0056b3; }
+        .alerts { margin: 20px 0; }
+        .alert { padding: 15px; border-radius: 5px; margin-bottom: 10px; }
+        .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .alert-info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .action-buttons { margin: 20px 0; }
+        .btn { display: inline-block; padding: 12px 25px; margin-right: 10px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; }
+        .btn-primary { background: #007bff; color: white; }
+        .btn-primary:hover { background: #0056b3; }
+        .btn-danger { background: #dc3545; color: white; }
+        .btn-danger:hover { background: #c82333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        th { background: #f8f9fa; padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; font-weight: bold; }
+        td { padding: 12px 15px; border-bottom: 1px solid #dee2e6; }
+        tr:hover { background: #f8f9fa; }
+        .backup-name { font-family: monospace; color: #666; }
+        .file-size { color: #999; }
+        .backup-stats { background: #e7f3ff; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .backup-stats p { margin: 5px 0; }
+        form { display: inline; }
+        .restore-form { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💾 Backup Manager</h1>
+        
+        <div class="nav">
+            <a href="/admin">← Back to Admin Panel</a>
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="alerts">
+                {% for category, message in messages %}
+                    {% if category == 'success' %}
+                    <div class="alert alert-success">{{ message }}</div>
+                    {% elif category == 'error' %}
+                    <div class="alert alert-error">{{ message }}</div>
+                    {% else %}
+                    <div class="alert alert-info">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+        
+        <div class="backup-stats">
+            <h3>📊 Backup Statistics</h3>
+            <p><strong>Total Backups:</strong> {{ backups|length }}</p>
+            <p><strong>Status:</strong> ✅ Automatic backups running every 6 hours</p>
+            <p><strong>Retention:</strong> 10 most recent backups kept automatically</p>
+        </div>
+        
+        <div class="action-buttons">
+            <form method="POST" action="/admin/create_backup">
+                <button type="submit" class="btn btn-primary">🆕 Create Backup Now</button>
+            </form>
+        </div>
+        
+        {% if backups %}
+        <h2>Available Backups</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Backup File</th>
+                    <th>Size</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for backup in backups %}
+                <tr>
+                    <td class="backup-name">{{ backup['filename'] }}</td>
+                    <td class="file-size">{{ backup['size'] }}</td>
+                    <td>{{ backup['timestamp'] }}</td>
+                    <td>
+                        <form method="POST" action="/admin/restore_backup/{{ backup['filename'] }}" style="display: inline;" onsubmit="return confirm('⚠️ Are you sure you want to restore this backup? Current database will be backed up first.');">
+                            <button type="submit" class="btn btn-danger" style="padding: 8px 15px; font-size: 0.9em;">🔄 Restore</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <div style="margin-top: 30px; padding: 15px; background: #f0f0f0; border-radius: 5px; font-size: 0.9em;">
+            <h3>ℹ️ How Backups Work</h3>
+            <ul style="margin: 10px 0; margin-left: 20px;">
+                <li><strong>Automatic Backups:</strong> System creates automatic backups every 6 hours</li>
+                <li><strong>Manual Backups:</strong> Click "Create Backup Now" to create an instant backup</li>
+                <li><strong>Restoration:</strong> Click "Restore" to restore database from any backup</li>
+                <li><strong>Pre-Restore Safety:</strong> Current database is automatically backed up before restoration</li>
+                <li><strong>Auto-Cleanup:</strong> System keeps 10 most recent backups; older ones are deleted</li>
+                <li><strong>Storage:</strong> All backups stored in <code>backups/</code> folder</li>
+            </ul>
+        </div>
+        {% else %}
+        <p style="text-align: center; margin-top: 30px; color: #999;">No backups available. Click "Create Backup Now" to create your first backup.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

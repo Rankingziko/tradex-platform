@@ -1,0 +1,210 @@
+[
+  {
+    "_id": "84fbb832a868793868c880de",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "BTC",
+    "amount": 500,
+    "method": "bank_transfer",
+    "depositAddress": "btc_wallet_45b9fd4b3e3fa73e2340b323",
+    "bankDetails": {
+      "bankName": "Test Bank",
+      "accountNumber": "1234567890"
+    },
+    "status": "confirmed",
+    "transactionId": "TXN-1780103683830",
+    "createdAt": "2026-05-30T01:14:43.831Z",
+    "confirmedAt": "2026-05-30T01:14:52.953Z",
+    "confirmations": 10
+  },
+  {
+    "_id": "2c22caa8a5b95732957dccc3",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "ETH",
+    "amount": 250,
+    "method": "bank_transfer",
+    "depositAddress": "eth_wallet_45b9fd4b3e3fa73e2340b323",
+    "bankDetails": {
+      "accountNumber": "9876543210",
+      "bankName": "Wells Fargo"
+    },
+    "status": "confirmed",
+    "transactionId": "TXN-1780105049460",
+    "createdAt": "2026-05-30T01:37:29.460Z",
+    "confirmedAt": "2026-05-30T01:41:27.502Z",
+    "confirmedBy": "e45773463942ed77c1c864dd"
+  },
+  {
+    "_id": "81daee1a4b464b02779cb5fb",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "BNB",
+    "amount": 100,
+    "method": "bank_transfer",
+    "depositAddress": "bnb_wallet_45b9fd4b3e3fa73e2340b323",
+    "status": "cancelled",
+    "transactionId": "TXN-1780105404672",
+    "createdAt": "2026-05-30T01:43:24.672Z",
+    "rejectionReason": "Insufficient documentation provided",
+    "rejectedBy": "e45773463942ed77c1c864dd",
+    "rejectedAt": "2026-05-30T01:43:25.286Z"
+  },
+  {
+    "_id": "opay_deposit_001",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "USD",
+    "amount": 5000,
+    "method": "opay",
+    "depositAddress": "8066824832",
+    "paymentDetails": {
+      "provider": "OPay",
+      "accountName": "EBIYOR ZIKOREBAI",
+      "accountNumber": "8066824832"
+    },
+    "status": "confirmed",
+    "transactionId": "TXN-opay-001",
+    "createdAt": "2026-05-29T10:00:00.000Z",
+    "confirmedAt": "2026-05-29T10:15:00.000Z"
+  },
+  {
+    "_id": "bitcoin_deposit_001",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "BTC",
+    "amount": 0.5,
+    "method": "bitcoin",
+    "depositAddress": "1A1z7agoat3Z5QqRrXhKfvDkgvgPDk3bAV",
+    "paymentDetails": {
+      "provider": "Bitcoin",
+      "walletAddress": "1A1z7agoat3Z5QqRrXhKfvDkgvgPDk3bAV",
+      "transactionHash": "abc123def456ghi789jkl012mno345pqr"
+    },
+    "status": "confirmed",
+    "transactionId": "TXN-btc-001",
+    "createdAt": "2026-05-28T14:30:00.000Z",
+    "confirmedAt": "2026-05-28T15:45:00.000Z",
+    "confirmations": 6
+  },
+  {
+    "_id": "ethereum_deposit_001",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "ETH",
+    "amount": 2,
+    "method": "ethereum",
+    "depositAddress": "0x742d35Cc6634C0532925a3b844Bc42e4b29234Be",
+    "paymentDetails": {
+      "provider": "Ethereum",
+      "walletAddress": "0x742d35Cc6634C0532925a3b844Bc42e4b29234Be",
+      "transactionHash": "0xabc123def456ghi789jkl012mno345pqrst"
+    },
+    "status": "confirmed",
+    "transactionId": "TXN-eth-001",
+    "createdAt": "2026-05-30T12:00:00.000Z",
+    "confirmedAt": "2026-05-30T14:36:29.292Z",
+    "confirmedBy": "e45773463942ed77c1c864dd"
+  },
+  {
+    "_id": "usdt_trc20_deposit_001",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "USDT",
+    "amount": 1000,
+    "method": "usdt_trc20",
+    "depositAddress": "TKJHqVDTKBqNczBj7crZxPvVHXfZE8d8mY",
+    "paymentDetails": {
+      "provider": "TRON",
+      "walletAddress": "TKJHqVDTKBqNczBj7crZxPvVHXfZE8d8mY",
+      "network": "TRON",
+      "transactionHash": "tron_tx_hash_001"
+    },
+    "status": "confirmed",
+    "transactionId": "TXN-usdt-trc20-001",
+    "createdAt": "2026-05-27T08:20:00.000Z",
+    "confirmedAt": "2026-05-27T08:35:00.000Z"
+  },
+  {
+    "_id": "usdt_bep20_deposit_001",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "USDT",
+    "amount": 2000,
+    "method": "usdt_bep20",
+    "depositAddress": "0x9F5B9Af3Bc9f0BedFf0Ee5dB5E4E5E4E5E4E5E4",
+    "paymentDetails": {
+      "provider": "BSC",
+      "walletAddress": "0x9F5B9Af3Bc9f0BedFf0Ee5dB5E4E5E4E5E4E5E4",
+      "network": "BSC",
+      "transactionHash": "bsc_tx_hash_001"
+    },
+    "status": "pending",
+    "transactionId": "TXN-usdt-bep20-001",
+    "createdAt": "2026-05-30T13:45:00.000Z"
+  },
+  {
+    "_id": "bnb_deposit_001",
+    "userId": "45b9fd4b3e3fa73e2340b323",
+    "currency": "BNB",
+    "amount": 5,
+    "method": "bnb",
+    "depositAddress": "0xAb8483f64d9C6d1EcF9b849Ae677dD3315835cb2",
+    "paymentDetails": {
+      "provider": "BSC",
+      "walletAddress": "0xAb8483f64d9C6d1EcF9b849Ae677dD3315835cb2",
+      "network": "BSC",
+      "transactionHash": "bnb_tx_hash_001"
+    },
+    "status": "confirmed",
+    "transactionId": "TXN-bnb-001",
+    "createdAt": "2026-05-26T16:10:00.000Z",
+    "confirmedAt": "2026-05-26T16:25:00.000Z"
+  },
+  {
+    "_id": "841154842721ce2802007b5c",
+    "userId": "41b73d583a4b5a9f9db91f11",
+    "currency": "BTC",
+    "amount": 900000,
+    "method": "opay",
+    "depositAddress": "btc_wallet_41b73d583a4b5a9f9db91f11",
+    "bankDetails": null,
+    "status": "pending",
+    "transactionId": "TXN-1780145368532",
+    "createdAt": "2026-05-30T12:49:28.538Z"
+  },
+  {
+    "_id": "529e726fe380aaba4bc6ad8d",
+    "userId": "41b73d583a4b5a9f9db91f11",
+    "currency": "BTC",
+    "amount": 500000,
+    "method": "naira",
+    "depositAddress": "btc_wallet_41b73d583a4b5a9f9db91f11",
+    "bankDetails": null,
+    "status": "confirmed",
+    "transactionId": "TXN-1780147311837",
+    "createdAt": "2026-05-30T13:21:51.842Z",
+    "confirmedAt": "2026-05-30T14:26:22.719Z",
+    "confirmedBy": "e45773463942ed77c1c864dd"
+  },
+  {
+    "_id": "3a3bff0e94cf5cb9e04e3dab",
+    "userId": "e45773463942ed77c1c864dd",
+    "currency": "BTC",
+    "amount": 3000000,
+    "method": "naira",
+    "depositAddress": "btc_wallet_e45773463942ed77c1c864dd",
+    "bankDetails": null,
+    "paymentDetails": null,
+    "status": "confirmed",
+    "transactionId": "TXN-1780156250808",
+    "createdAt": "2026-05-30T15:50:50.809Z",
+    "confirmedAt": "2026-05-30T15:55:47.535Z",
+    "confirmedBy": "e45773463942ed77c1c864dd"
+  },
+  {
+    "_id": "39dc467e3c87051d8da7464c",
+    "userId": "58736a7e341a66f49a0f0d75",
+    "currency": "USDT",
+    "amount": 10000000,
+    "method": "naira",
+    "depositAddress": "usdt_wallet_58736a7e341a66f49a0f0d75",
+    "bankDetails": null,
+    "paymentDetails": null,
+    "status": "pending",
+    "transactionId": "TXN-1780187878788",
+    "createdAt": "2026-05-31T00:37:58.790Z"
+  }
+]
