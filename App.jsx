@@ -6,6 +6,7 @@ import React, { useState, useContext, useEffect, createContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
+import API_URL from './api';
 
 // Pages
 import LoginPage from './pages/LoginPage';
@@ -45,7 +46,7 @@ function App() {
 
   const fetchUserProfile = async (authToken) => {
     try {
-      const response = await axios.get('http://localhost:5000/api/user/profile', {
+      const response = await axios.get(`${API_URL}/api/user/profile`, {
         headers: { Authorization: `Bearer ${authToken}` }
       });
       setUser(response.data);

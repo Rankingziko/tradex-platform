@@ -6,6 +6,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Wallet, TrendingDown, Activity, Eye, MoreVertical } from 'lucide-react';
 import { AuthContext } from '../App';
+import API_URL from '../api';
 import axios from 'axios';
 import Chart from '../components/Chart';
 
@@ -24,9 +25,9 @@ const Dashboard = () => {
   const fetchDashboardData = async () => {
     try {
       const [cryptoRes, forexRes, tradesRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/markets/crypto'),
-        axios.get('http://localhost:5000/api/markets/forex'),
-        axios.get('http://localhost:5000/api/trades', {
+        axios.get(`${API_URL}/api/markets/crypto`),
+        axios.get(`${API_URL}/api/markets/forex`),
+        axios.get(`${API_URL}/api/trades`, {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
