@@ -8,6 +8,8 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const session = require('express-session');
+const passport = require('passport');
 const connectDB = require('./config/database');
 const { authMiddleware } = require('./config/auth');
 
@@ -21,6 +23,9 @@ const app = express();
 // ================================
 
 app.use(helmet());
+
+// Trust proxy for ngrok and proxied requests
+app.set('trust proxy', 1);
 
 // CORS configuration that allows both localhost and ngrok domains
 const corsOptions = {
@@ -63,6 +68,26 @@ app.use('/api/', limiter);
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
+
+// ================================
+// SESSION & PASSPORT MIDDLEWARE
+// ================================
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'tradex-secret-key-2026',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === 'production',
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    },
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // ================================
 // DATABASE CONNECTION

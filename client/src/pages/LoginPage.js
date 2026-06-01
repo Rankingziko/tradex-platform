@@ -2,9 +2,9 @@
 // LOGIN PAGE
 // ================================
 
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { Eye, EyeOff, Zap } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom';
+import { Eye, EyeOff, Zap, Mail } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
 export default function LoginPage() {
@@ -15,6 +15,24 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  // Handle OAuth callback
+  useEffect(() => {
+    const token = searchParams.get('token');
+    const userParam = searchParams.get('user');
+
+    if (token && userParam) {
+      try {
+        const user = JSON.parse(decodeURIComponent(userParam));
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+        navigate('/dashboard');
+      } catch (err) {
+        console.error('Error parsing OAuth callback:', err);
+      }
+    }
+  }, [searchParams, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +42,6 @@ export default function LoginPage() {
     try {
       const response = await login({ email, password });
       if (response && (response.token || response.user)) {
-        // Wait a moment for context to update then navigate
         setTimeout(() => {
           navigate('/dashboard');
         }, 100);
@@ -35,6 +52,11 @@ export default function LoginPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleGoogleLogin = () => {
+    // Redirect to backend Google OAuth endpoint
+    window.location.href = `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/auth/google`;
   };
 
   return (
@@ -78,6 +100,91 @@ export default function LoginPage() {
             {/* Password Field */}
             <div>
               <label className="block text-sm font-medium text-slate-200 mb-2">
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-cyan-500 text-white placeholder-slate-400 transition"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-cyan-400"
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
+            </div>
+
+            {/* Error Message */}
+            {error && (
+              <div className="p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 text-sm">
+                {error}
+              </div>
+            )}
+
+            {/* Remember Me & Forgot Password */}
+            <div className="flex items-center justify-between text-sm">
+              <label className="flex items-center gap-2 text-slate-300">
+                <input type="checkbox" className="w-4 h-4 rounded" />
+                Remember me
+              </label>
+              <Link to="/forgot-password" className="text-cyan-400 hover:text-cyan-300">
+                Forgot password?
+              </Link>
+            </div>
+
+            {/* Login Button */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition disabled:opacity-50 disabled:cursor-not-allowed mt-6"
+            >
+              {loading ? 'Signing in...' : 'Sign In'}
+            </button>
+
+            {/* Divider */}
+            <div className="flex items-center gap-3 my-6">
+              <div className="flex-1 h-px bg-white/10"></div>
+              <span className="text-xs text-slate-400">OR</span>
+              <div className="flex-1 h-px bg-white/10"></div>
+            </div>
+
+            {/* Google Sign-In Button */}
+            <button
+              type="button"
+              onClick={handleGoogleLogin}
+              className="w-full py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 transition flex items-center justify-center gap-2"
+            >
+              <Mail size={20} />
+              Sign in with Gmail
+            </button>
+
+            {/* Sign Up Link */}
+            <p className="text-center text-slate-400 text-sm">
+              Don't have an account?{' '}
+              <Link to="/register" className="text-cyan-400 hover:text-cyan-300 font-semibold">
+                Sign up
+              </Link>
+            </p>
+          </form>
+        </div>
+
+        {/* Demo Credentials */}
+        <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg text-sm text-slate-300">
+          <p className="font-semibold text-blue-400 mb-2">Demo Credentials:</p>
+          <p>Email: demo@tradex.com</p>
+          <p>Password: demo123</p>
+        </div>
+      </div>
+    </div>
+  );
+}
                 Password
               </label>
               <div className="relative">

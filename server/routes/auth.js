@@ -224,4 +224,61 @@ router.post('/change-password', authMiddleware, async (req, res) => {
   }
 });
 
+// -------- GOOGLE OAUTH --------
+const passport = require('passport');
+require('../config/google-oauth');
+
+router.get(
+  '/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+router.get(
+  '/google/callback',
+  passport.authenticate('google', { session: false }),
+  async (req, res) => {
+    try {
+      if (!req.user) {
+        return res.status(401).json({ error: 'Google authentication failed' });
+      }
+
+      const token = generateToken(req.user._id);
+
+      // Redirect to frontend with token
+      const frontendUrl = process.env.CLIENT_URL || 'http://localhost:3000';
+      res.redirect(
+        `${frontendUrl}/dashboard?token=${token}&user=${encodeURIComponent(
+          JSON.stringify({
+            id: req.user._id,
+            firstName: req.user.firstName,
+            lastName: req.user.lastName,
+            email: req.user.email,
+            profileImage: req.user.profileImage,
+          })
+        )}`
+      );
+    } catch (error) {
+      console.error('Google callback error:', error);
+      res.redirect(`${process.env.CLIENT_URL || 'http://localhost:3000'}/login?error=${error.message}`);
+    }
+  }
+);
+
+// Verify Google credentials endpoint (for frontend to verify token)
+router.post('/verify-google', async (req, res) => {
+  try {
+    const { googleToken } = req.body;
+
+    if (!googleToken) {
+      return res.status(400).json({ error: 'Google token is required' });
+    }
+
+    // You would verify the Google token here using Google's verification
+    // For now, we're relying on the browser's Google login
+    res.json({ message: 'Google verification would happen here' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;
